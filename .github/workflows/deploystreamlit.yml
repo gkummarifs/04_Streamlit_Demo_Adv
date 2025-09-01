@@ -29,6 +29,10 @@ jobs:
         pip install flake8
         flake8 demopy.py || echo "Lint warnings — not blocking"
 
+    - name: Verify Streamlit script exists
+      run: |
+        test -f demopy.py || (echo "demopy.py not found!" && exit 1)
+
     - name: Launch Streamlit (headless check)
       run: |
         streamlit run demopy.py --server.headless true &
