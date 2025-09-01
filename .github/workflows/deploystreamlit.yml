@@ -34,7 +34,7 @@ jobs:
 
     - name: Launch Streamlit (headless check)
       run: |
-        streamlit run demopy.py --server.headless true &
+        streamlit run demo.py --server.headless true &
         sleep 10
         pkill streamlit
         echo "Streamlit launched successfully"
