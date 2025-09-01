@@ -1,0 +1,52 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Streamlit cache and config
+.streamlit/
+*.streamlit/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Python environment files
+*.env
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# Jupyter and IPython
+.ipynb_checkpoints/
+*.ipynb
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# GitHub workflows (keep!)
+!.github/
+!.github/workflows/
+
+# Deployment artifacts
+*.pkl
+*.h5
+*.onnx
+*.joblib
+
+# Misc
+*.sqlite3
+*.db
+*.csv
+*.tsv
+*.xlsx

@@ -1,0 +1,37 @@
+name: Streamlit App CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  streamlit-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Lint Python files
+      run: |
+        pip install flake8
+        flake8 demopy.py || echo "Lint warnings — not blocking"
+
+    - name: Sanity check: Streamlit app loads
+      run: |
+        streamlit run demopy.py --server.headless true &
+        sleep 10
+        pkill streamlit
+        echo "Streamlit launched successfully"
