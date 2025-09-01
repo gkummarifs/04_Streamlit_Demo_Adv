@@ -30,7 +30,7 @@ jobs:
 
     - name: Verify Streamlit script exists
       run: |
-        test -f demopy.py || (echo "demopy.py not found!" && exit 1)
+        test -f demo.py || (echo "demopy.py not found!" && exit 1)
 
     - name: Launch Streamlit (headless check)
       run: |
